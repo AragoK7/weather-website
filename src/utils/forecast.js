@@ -9,11 +9,16 @@ const forecast = (latitude, longitude, callback) => {
     if (error) callback("Unable to connect to weather services", null);
     else if (body.error) callback("Unable to find location", null);
     else
-      callback(null, {
-        temperature: body.current.temperature,
-        pressure: body.current.pressure,
-        weatherDesc: body.current.weather_descriptions[0],
-      });
+      callback(
+        null,
+        "Vreme: " +
+          body.current.weather_descriptions[0] +
+          " ~ Temperatura: " +
+          body.current.temperature +
+          " ~ Pritisak: " +
+          body.current.pressure +
+          "mbar"
+      );
   });
 };
 
