@@ -16,7 +16,14 @@ weatherForm.addEventListener("submit", (e) => {
       if (data.error) messageOne.textContent = data.error;
       else {
         messageOne.textContent = data.location;
-        messageTwo.textContent = "Temperatura: " + data.temperature;
+        messageTwo.textContent =
+          "Vreme: " +
+          data.weatherDesc +
+          " ~ Temperatura: " +
+          data.temperature +
+          " ~ Pritisak: " +
+          data.pressure +
+          "mbar";
       }
     });
   });
